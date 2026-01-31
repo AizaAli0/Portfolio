@@ -1,0 +1,99 @@
+/* 425  */
+
+.container {
+    /* background-color: rgb(224, 214, 214); */
+    height: 1000px;
+    width: 500px;
+}
+.container::before {
+    height: 1000px;
+    width: 500px;
+}
+#social {
+    left: 25px;
+    top: 40px;
+}
+
+#navbar{
+    margin-top:60px;
+}
+#navbar ul {
+    width: 60%;
+    padding: 30px;
+}
+
+/* container-2  */
+.container-2 {
+    height: 100%;
+    width: 100%;
+    margin-left: 50px;
+}
+.food-img {
+    height: 200px;
+    width: 200px;
+}
+
+/* container-3  */
+.container-3 {
+    height: 900px;
+    width: 500px;
+}
+.child-container {
+    height: 850px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.child-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 0px;
+}
+.container-3 img {
+    margin: 0px;
+}
+.container-3 span {
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 0px;
+}
+
+/* container-4  */
+.container-4 {
+    align-items: flex-start;
+    height: 1000px;
+    width: 500px;
+}
+.img-2 {
+    height: 150px;
+    width: 150px;
+    margin-top: 190px;
+    margin-left: -92px;
+    transform: skew(6deg);
+}
+
+/* container-last  */
+.container-last {
+    width: 500px;
+}
+#p-1 {
+    margin-left: 0px;
+}
+#h4-1 {
+    width: 250px;
+}
+#item-1 {
+    width: 200px;
+}
+#item-2 {
+    width: 200px;
+}
+#item-3 {
+    width: 200px;
+}
+footer{
+    width: 500px;
+}

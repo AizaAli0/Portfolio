@@ -1,0 +1,155 @@
+.nav{
+    background: linear-gradient(rgba(198, 59, 250, .8), rgba(198, 59, 250, .8)), url(/html_files/bg-img.jpg) no-repeat;
+}
+.home{
+    background: linear-gradient(rgba(198, 59, 250, .8), rgba(198, 59, 250, .8)), url(/html_files/bg-img.jpg) no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+}
+.home .about-me-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.home .about-me-content h1{
+    font-size: 3rem;
+    color: #fff;
+    padding: 0 1rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+}
+.home .about-me-content p{
+    font-size: 1rem;
+    color: #eee;
+    padding: 1rem 15rem;
+}
+.home .about-me-content button{
+    height: 2rem;
+    width: 10rem;
+    border-radius: 2rem;
+    background: var(--pink);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s;
+    border: none;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .3);
+}
+.home .about-me-content button:hover{
+    letter-spacing: .1rem;
+}
+/* ----------------------------------------hobby container-------------------------------------------  */
+.home .hobby-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.home .hobby-container .hobby{
+    height: 12rem;
+    width: 15rem;
+    background: #fff;
+    text-align: center;
+    border-radius: 0.8rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+    margin: 1rem;
+    cursor: pointer;
+}
+.home .hobby-container .hobby i{
+    height: 4rem;
+    width: 4rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--violet);
+    transition: .2s;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+.home .hobby-container .hobby i:hover{
+    background: var(--pink);
+}
+.home .hobby-container .hobby h3{
+    font-size: 1.5rem;
+    color: var(--pink);
+    transition: .2s;
+}
+.home .hobby-container .hobby h3:hover{
+    color: var(--violet);
+}
+.home::before{
+    content: '';
+    position: absolute;
+    bottom: -10rem;
+    left: 50%;
+    transform: translate(-50%);
+    border-top: 70vh solid #fff;
+    width: 120%;
+    border-radius: 50%;
+    z-index: -1;
+}
+/* -------------------------------skill container ---------------------------------------------------------- */
+.skill .skill-container{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 4rem;
+    flex-wrap: wrap;
+}
+.skill .skill-container .box{
+    height: 12rem;
+    width: 15rem;
+    margin: 3.5rem 2rem;
+    background: #fff;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: .3rem .3rem .1rem var(--violet), 
+                .5rem .5rem .5rem rgba(0, 0, 0, .3);
+}
+.skill .skill-container .box i{
+    height: 8rem;
+    width: 8rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--pink);
+    margin-top: -4rem;
+    border: 1rem solid #fff;
+    border-left: 1rem solid var(--pink);
+    border-right: 1rem solid var(--pink);
+    box-shadow: 0 0 0 1rem #fff inset;
+    transition: .2s;
+    font-size: 1.5rem;
+}
+.skill .skill-container .box h3{
+    font-size: 1.5rem;
+    color: var(--violet);
+}
+.skill .skill-container .box p{
+    font-size: 1rem;
+    color: #999;
+    padding: 0 .5rem;
+}
+/* ------------------------------------Media querey---------------------------------------------------------  */
+@media (max-width:700px) {
+    .home .about-me-content p{
+        padding: 1.5rem 2rem;
+    }
+    .home::before{
+        display: none;
+    }
+    .skill .skill-container{
+        width: 100%;
+    }
+}

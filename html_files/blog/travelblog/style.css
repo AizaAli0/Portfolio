@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+.navbar{
+    background-image: url(bg1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size:cover;
+    /* opacity: -1; */
+}
+.nav-above{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 50px;
+    border: 2px soild white;
+    font-family: "Crimson Text", serif;
+    font-size: 18px;
+    font-style: italic;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav-above1{
+    display: flex;
+    justify-content: space-evenly;
+    width: 350px;
+}
+.nav-above2{
+    display: flex;
+    width: 200px;
+    justify-content: space-evenly;    
+}
+
+/* nav-second  */
+.nav-second{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid white;    
+}
+.logo{
+    background-image: url(logo-img.png);
+    height: 76px;
+    width: 150px;
+    background-size: cover;
+}
+.nav-second span{
+    width: 30%;
+}
+.attributes{
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    justify-content: space-around;
+}
+
+/* nav-cover  */
+.nav-cover{
+    height: 300px;
+    display: flex;
+    padding-left: 70px;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    padding: 120px;
+}
+.img1{
+    width: 335px;
+    height: 460px;
+    background-image: url(destination-gallery-img-01.jpg);
+    background-size: cover;
+}
+.img2{
+    width: 335px;
+    height: 460px;
+    background-image: url(destination-gallery-img-02.jpg);
+    background-size: cover;
+}
+.img3{
+    width: 335px;
+    height: 460px;
+    background-image: url(destination-gallery-img-03.jpg);
+    background-size: cover;
+}

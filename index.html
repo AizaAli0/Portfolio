@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayeza Ali — Cybersecurity Graduate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 0 4rem;
+    }
+    .hero-container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    .hero-status {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-family: var(--font-term);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--accent3);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      border: 1px solid #00ff9d25;
+      padding: .4rem 1rem;
+      width: fit-content;
+    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent3); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 #00ff9d40;} 50%{opacity:.5;box-shadow:0 0 0 6px transparent;} }
+
+    .hero-eyebrow {
+      font-family: var(--font-term);
+      font-size: .78rem;
+      color: var(--accent);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+
+    .hero-name {
+      font-family: var(--font-head);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .05em;
+      line-height: .95;
+      margin-bottom: 1.2rem;
+    }
+    .hero-name .outline {
+      -webkit-text-stroke: 1px var(--accent2);
+      color: transparent;
+    }
+
+    .hero-title {
+      font-family: var(--font-term);
+      font-size: clamp(.85rem, 1.5vw, 1rem);
+      color: var(--accent2);
+      letter-spacing: .08em;
+      margin-bottom: 1.5rem;
+      min-height: 1.5rem;
+    }
+    .hero-title .cursor-char { animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    .hero-desc {
+      max-width: 580px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+
+    .stats-row {
+      display: flex; gap: 3rem; flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .stat { }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      line-height: 1;
+    }
+    .stat-label { font-family: var(--font-term); font-size: .68rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: .2rem; }
+
+    /* ── WHAT I DO ── */
+    .wid-section { background: var(--bg2); padding: 6rem 0; }
+    .wid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .wid-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .wid-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--grad2);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .wid-card:hover { border-color: var(--accent2); transform: translateY(-4px); box-shadow: 0 20px 50px var(--glow2); }
+    .wid-card:hover::after { transform: scaleX(1); }
+
+    .wid-num {
+      font-family: var(--font-term);
+      font-size: .7rem;
+      color: var(--accent);
+      letter-spacing: .15em;
+      margin-bottom: 1rem;
+    }
+    .wid-icon { font-size: 1.8rem; color: var(--accent2); margin-bottom: 1rem; }
+    .wid-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--white); margin-bottom: .7rem; letter-spacing: .04em;
+    }
+    .wid-card p { color: var(--muted); font-size: .83rem; line-height: 1.7; }
+
+    /* ── TAGLINE BAND ── */
+    .tagline-band {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .tagline-track {
+      display: flex; gap: 4rem;
+      white-space: nowrap;
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+    .tagline-item {
+      font-family: var(--font-head);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .tagline-item .dot { color: var(--accent2); margin-right: 4rem; }
+  </style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">aiza.ali<span class="blink">_</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pages/about.html">About</a></li>
+    <li><a href="pages/skills.html">Skills</a></li>
+    <li><a href="pages/projects.html">Projects</a></li>
+    <li><a href="pages/experience.html">Experience</a></li>
+    <li><a href="pages/subscriptions.html">Subs</a></li>
+    <li><a href="pages/contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer">
+  <div class="nav-drawer-inner">
+    <div class="drawer-terminal">// navigate_to.sh — select destination</div>
+    <a href="index.html"><span class="drawer-num">01</span> Home <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/about.html"><span class="drawer-num">02</span> About <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/skills.html"><span class="drawer-num">03</span> Skills <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/projects.html"><span class="drawer-num">04</span> Projects <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/experience.html"><span class="drawer-num">05</span> Experience <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/subscriptions.html"><span class="drawer-num">06</span> Subscriptions <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="pages/contact.html"><span class="drawer-num">07</span> Contact <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero page">
+  <div class="hero-container">
+    <div class="hero-status"><span class="status-dot"></span> Open to Opportunities</div>
+    <p class="hero-eyebrow">// portfolio.exe</p>
+    <h1 class="hero-name">AIZA<br><span class="outline">ALI</span></h1>
+    <div class="hero-title">
+      <span id="typed"></span><span class="cursor-char">|</span>
+    </div>
+    <p class="hero-desc">
+      Cybersecurity graduate passionate about learning, building, and securing digital systems. 
+      Combining technical depth in security and web development with real-world experience in 
+      project coordination and client communication.
+    </p>
+    <div class="hero-actions">
+      <a href="pages/projects.html" class="btn btn-primary"><i class="fa-solid fa-terminal"></i> View Projects</a>
+      <a href="pages/contact.html" class="btn btn-ghost"><i class="fa-solid fa-satellite-dish"></i> Get in Touch</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num counter" data-target="4" data-suffix="+">0</div><div class="stat-label">Languages Known</div></div>
+      <div class="stat"><div class="stat-num counter" data-target="4" data-suffix="">0</div><div class="stat-label">Projects Built</div></div>
+      <div class="stat"><div class="stat-num counter" data-target="2" data-suffix="">0</div><div class="stat-label">Industries Worked In</div></div>
+      <div class="stat"><div class="stat-num counter" data-target="1" data-suffix="">0</div><div class="stat-label">Degree Earned</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING TAGLINE -->
+<div class="tagline-band">
+  <div class="tagline-track">
+    <span class="tagline-item">Cybersecurity<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Web Development<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Network Security<span class="dot"> ✦</span></span>
+    <!-- <span class="tagline-item">Penetration Testing<span class="dot"> ✦</span></span> -->
+    <span class="tagline-item">Project Coordination<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Vulnerability Analysis<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Cybersecurity<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Web Development<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Network Security<span class="dot"> ✦</span></span>
+    <!-- <span class="tagline-item">Penetration Testing<span class="dot"> ✦</span></span> -->
+    <span class="tagline-item">Project Coordination<span class="dot"> ✦</span></span>
+    <span class="tagline-item">Vulnerability Analysis<span class="dot"> ✦</span></span>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<div class="wid-section page">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">Core <span class="col">Capabilities</span></h2>
+      <div class="section-line"></div>
+      <p class="section-sub">Three areas where I invest my expertise and continue to grow every day.</p>
+    </div>
+    <div class="wid-grid stagger">
+      <div class="wid-card">
+        <div class="wid-num">01 / SECURITY</div>
+        <div class="wid-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Cybersecurity</h3>
+        <p>Studying system vulnerabilities, network traffic analysis, and ethical security testing — with a focus on understanding how attacks work so I can help build defenses.</p>
+      </div>
+      <div class="wid-card">
+        <div class="wid-num">02 / DEVELOPMENT</div>
+        <div class="wid-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Building responsive, clean websites using HTML, CSS, JavaScript, and PHP — from static pages to dynamic, interactive web applications.</p>
+      </div>
+      <div class="wid-card">
+        <div class="wid-num">03 / COORDINATION</div>
+        <div class="wid-icon"><i class="fa-solid fa-diagram-project"></i></div>
+        <h3>Project Coordination</h3>
+        <p>Managing technical workflows, keeping teams aligned, and ensuring deliverables are met on time — skills built through real experience in the animation industry.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    &copy; 2025 <span>Aiza Ali</span> — All systems operational.
+  </div>
+  <div class="footer-links">
+    <a href="https://github.com/AizaAli0" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="http://www.linkedin.com/in/aiza-ali" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:ayeza1523@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Typing animation
+  const titles = [
+    'Cybersecurity Graduate',
+    'Web Developer',
+    'Technical Project Coordinator',
+    //'Penetration Testing Enthusiast'
+  ];
+  let tIdx = 0, cIdx = 0, deleting = false;
+  const el = document.getElementById('typed');
+  function type() {
+    const current = titles[tIdx];
+    if(!deleting) {
+      el.textContent = current.slice(0, ++cIdx);
+      if(cIdx === current.length){ deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = current.slice(0, --cIdx);
+      if(cIdx === 0){ deleting = false; tIdx = (tIdx+1) % titles.length; setTimeout(type, 300); return; }
+    }
+    setTimeout(type, deleting ? 40 : 75);
+  }
+  type();
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience — Ayeza Ali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--border); }
+    .page-hero .breadcrumb { font-family: var(--font-term); font-size: .72rem; color: var(--muted); letter-spacing: .1em; margin-bottom: 1.5rem; }
+    .page-hero .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .page-hero .breadcrumb span { margin: 0 .5rem; }
+    .page-hero h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; color: var(--white); letter-spacing: .06em; line-height: 1; }
+    .page-hero h1 .col { color: var(--accent2); }
+
+    /* TIMELINE */
+    .exp-section { padding: 6rem 0; }
+    .timeline { position: relative; padding-left: 3rem; margin-top: 4rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 4rem;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute; left: -3.4rem; top: 1.4rem;
+      width: 14px; height: 14px;
+      border: 2px solid var(--accent2);
+      background: var(--bg);
+      transform: rotate(45deg);
+    }
+
+    .timeline-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .timeline-role {
+      font-family: var(--font-head);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--white); letter-spacing: .04em;
+    }
+    .timeline-company {
+      font-family: var(--font-term);
+      font-size: .82rem; color: var(--accent2);
+      letter-spacing: .08em;
+    }
+    .timeline-badge {
+      font-family: var(--font-term);
+      font-size: .68rem; color: var(--accent3);
+      border: 1px solid #00ff9d25;
+      padding: .3rem .8rem;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .timeline-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      transition: border-color .25s;
+    }
+    .timeline-card:hover { border-color: var(--accent); }
+
+    .resp-title {
+      font-family: var(--font-term);
+      font-size: .68rem; color: var(--accent);
+      letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .resp-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .resp-list li {
+      display: flex; align-items: flex-start; gap: .8rem;
+      color: var(--text); font-size: .88rem; line-height: 1.6;
+    }
+    .resp-list li::before {
+      content: '▸';
+      color: var(--accent2);
+      flex-shrink: 0; margin-top: .05rem;
+    }
+
+    .timeline-takeaway {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-left: 2px solid var(--accent3);
+      background: var(--bg2);
+    }
+    .timeline-takeaway .tk-label { font-family: var(--font-term); font-size: .65rem; color: var(--accent3); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .3rem; }
+    .timeline-takeaway p { color: var(--muted); font-size: .82rem; }
+
+    /* EDUCATION */
+    .edu-section { background: var(--bg2); padding: 5rem 0; }
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      display: flex; gap: 2rem; align-items: flex-start;
+      margin-top: 3rem;
+      transition: border-color .25s;
+    }
+    .edu-card:hover { border-color: var(--accent2); }
+    .edu-icon {
+      width: 60px; height: 60px; flex-shrink: 0;
+      background: var(--bg2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--accent2);
+    }
+    .edu-degree {
+      font-family: var(--font-head);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--white); letter-spacing: .04em;
+    }
+    .edu-school { font-family: var(--font-term); font-size: .82rem; color: var(--accent2); margin-top: .3rem; }
+    .edu-desc { color: var(--muted); font-size: .85rem; margin-top: .8rem; line-height: 1.7; }
+
+    @media(max-width:768px){
+      .timeline { padding-left: 1.5rem; }
+      .timeline-dot { left: -1.9rem; }
+      .edu-card { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">ayeza.ali<span class="blink">_</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="subscriptions.html">Subs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer">
+  <div class="nav-drawer-inner">
+    <div class="drawer-terminal">// navigate_to.sh — select destination</div>
+    <a href="../index.html"><span class="drawer-num">01</span> Home <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="about.html"><span class="drawer-num">02</span> About <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="skills.html"><span class="drawer-num">03</span> Skills <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="projects.html"><span class="drawer-num">04</span> Projects <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="experience.html"><span class="drawer-num">05</span> Experience <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="subscriptions.html"><span class="drawer-num">06</span> Subscriptions <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+    <a href="contact.html"><span class="drawer-num">07</span> Contact <i class="fa-solid fa-chevron-right drawer-arrow"></i></a>
+  </div>
+</div>
+
+<div class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span> Experience</div>
+      <h1>Work <span class="col">Experience</span></h1>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL TIMELINE -->
+  <section class="exp-section">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Career Timeline</p>
+        <h2 class="section-title">Professional <span class="col">History</span></h2>
+        <div class="section-line"></div>
+        <p class="section-sub">Real-world experience that shaped my communication, coordination, and professional mindset.</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- EXPERIENCE 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Project Coordinator</div>
+              <div class="timeline-company">// Animation Production Industry</div>
+            </div>
+            <div class="timeline-badge">Professional Experience</div>
+          </div>
+          <div class="timeline-card">
+            <div class="resp-title">// responsibilities</div>
+            <ul class="resp-list">
+              <li>Managed end-to-end workflow for 2D and 3D animation projects, ensuring milestones were consistently met.</li>
+              <li>Coordinated cross-functional team members, tracking task progress and resolving bottlenecks proactively.</li>
+              <li>Maintained clear project timelines and communicated status updates to all stakeholders.</li>
+              <li>Identified and resolved project issues through team communication, keeping production on schedule.</li>
+            </ul>
+            <div class="timeline-takeaway">
+              <div class="tk-label">// key outcome</div>
+              <p>Developed strong organizational discipline, the ability to manage multiple workstreams simultaneously, and confidence in leading team communication in a fast-paced production environment.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Sales Associate</div>
+              <div class="timeline-company">// Client-Facing Sales Role</div>
+            </div>
+            <div class="timeline-badge">Professional Experience</div>
+          </div>
+          <div class="timeline-card">
+            <div class="resp-title">// responsibilities</div>
+            <ul class="resp-list">
+              <li>Engaged directly with customers to understand their needs and present tailored solutions.</li>
+              <li>Pitched services professionally, clearly communicating value propositions to diverse audiences.</li>
+              <li>Built lasting client relationships through consistent follow-up and attentive communication.</li>
+              <li>Developed negotiation skills and the confidence to handle objections constructively.</li>
+            </ul>
+            <div class="timeline-takeaway">
+              <div class="tk-label">// key outcome</div>
+              <p>Gained a strong foundation in professional communication, active listening, and client relationship management — skills that directly enhance my ability to work with technical and non-technical stakeholders alike.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <div class="edu-section page">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Academic Background</p>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div>
+          <div class="edu-degree">Bachelor of Engineering — Cybersecurity</div>
+          <div class="edu-school">// Dawood University of Engineering &amp; Technology, Karachi</div>
+          <p class="edu-desc">
+            Completed a rigorous cybersecurity degree program covering network security, ethical hacking fundamentals, programming (C++, Python, JavaScript, PHP), web technologies, and security systems design. 
+            Coursework included both theoretical foundations and lab-based practical work, with an emphasis on understanding real-world threat landscapes and building secure systems.
+          </p>
+          <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap;">
+            <span class="tag">Network Security</span>
+            <span class="tag">Programming</span>
+            <span class="tag">Web Technologies</span>
+            <span class="tag">Security Systems</span>
+            <span class="tag">Ethical Hacking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">&copy; 2025 <span>Ayeza Ali</span> — Karachi, Pakistan</div>
+  <div class="footer-links">
+    <a href="https://github.com/AizaAli0" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="http://www.linkedin.com/in/aiza-ali" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:ayeza1523@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
